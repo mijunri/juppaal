@@ -14,8 +14,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-import static uppaal.test.UppaalBuilder.PATH;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -78,7 +76,7 @@ public class NTA {
         Element system = root.addElement(UppaalConstants.SYSTEM);
         system.addText(getSystem());
 
-        XMLWriter writer = new XMLWriter( new FileOutputStream(PATH+"nta.xml"),
+        XMLWriter writer = new XMLWriter( new FileOutputStream(path),
                 OutputFormat.createPrettyPrint());
         writer.write(document);
         writer.close();
