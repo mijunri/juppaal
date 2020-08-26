@@ -43,7 +43,7 @@ public class NTA {
                 Element location = templateElement.addElement(UppaalConstants.LOCATION);
                 location.addAttribute(UppaalConstants.ID,template.getName()+uppaalLocation.getId());
                 Element locationName = location.addElement(UppaalConstants.NAME);
-                locationName.addText("s"+uppaalLocation.getName());
+                locationName.addText(uppaalLocation.getName());
             }
 
             Element init = templateElement.addElement(UppaalConstants.INIT);
@@ -57,7 +57,7 @@ public class NTA {
                 source.addAttribute(UppaalConstants.REF,template.getName()+uppaalTransition.getSource().getId());
 
                 Element target = transition.addElement(UppaalConstants.TARGET);
-                target.addAttribute("ref",template.getName()+uppaalTransition.getTarget().getId());
+                target.addAttribute(UppaalConstants.REF,template.getName()+uppaalTransition.getTarget().getId());
 
                 Element sycnLabel = transition.addElement(UppaalConstants.LABEL);
                 sycnLabel.addAttribute(UppaalConstants.KIND, UppaalConstants.SYNCHRONISATION);
